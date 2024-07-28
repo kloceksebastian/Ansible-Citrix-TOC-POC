@@ -1,0 +1,9 @@
+- name: sysconfig -> network
+  tags: wr_net_host
+  lineinfile:
+    path: /etc/sysconfig/network
+    # add inventory_hostname in the brackets
+    line: "HOSTNAME={{ inventory_hostname }}"
+    owner: root
+    group: root
+    mode: '0644'
